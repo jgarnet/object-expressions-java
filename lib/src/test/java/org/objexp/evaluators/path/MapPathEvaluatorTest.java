@@ -18,6 +18,7 @@ public class MapPathEvaluatorTest {
         Assertions.assertEquals(map.get("collection"), e.evaluate(map, "$collection"));
         Assertions.assertEquals(1, (Integer) e.evaluate(map, "$collection.0.a.b"));
         Assertions.assertEquals(2, (Integer) e.evaluate(map, "$collection.1.c.1"));
+        Assertions.assertEquals("test", e.evaluate(map, "$0"));
     }
 
     public Map<String, Object> loadMap(String fileName) throws IOException {

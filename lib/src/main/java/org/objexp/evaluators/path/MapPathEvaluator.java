@@ -35,7 +35,7 @@ public class MapPathEvaluator implements PathEvaluator<Map<String, Object>> {
             if (StringUtils.isBlank(token)) {
                 throw new ExpressionException(String.format("Received invalid path: %s", path));
             }
-            if (NUMBER.matcher(token).matches()) {
+            if (NUMBER.matcher(token).matches() && result instanceof List) {
                 List<Object> list = (List<Object>) result;
                 result = (Result) list.get(Integer.parseInt(token));
                 continue;
